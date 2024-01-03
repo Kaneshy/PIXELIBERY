@@ -1,12 +1,49 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;900&display=swap');
+
 
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+
+  /*Green gradient*/
+  --body-color: linear-gradient(90deg, hsl(23, 84%, 75%) 0%, hsl(9, 92%, 54%) 100%);
+  --container-color: linear-gradient(136deg, hsl(120, 1%, 15%) 0%, hsl(0, 0%, 3%) 100%);
+  --footer-color: linear-gradient(180deg, hsl(23, 84%, 75%) 0%, hsl(9, 92%, 54%) 100%);
+
+
+  /*========== Font and typography ==========*/
+  --body-font: 'Poppins', sans-serif;
+  --biggest-font-size: 2rem;
+  --h1-font-size: 1.5rem;
+  --h2-font-size: 1.25rem;
+  --h3-font-size: 1rem;
+  --normal-font-size: .938rem;
+  --small-font-size: .813rem;
+  --smaller-font-size: .75rem;
+
+  /*========== Font weight ==========*/
+  --font-medium: 500;
+  --font-semi-bold: 600;
+  --font-black: 900;
+
+  /*========== Margenes Bottom ==========*/
+  --mb-0-25: .25rem;
+  --mb-0-5: .5rem;
+  --mb-0-75: .75rem;
+  --mb-1: 1rem;
+  --mb-1-5: 1.5rem;
+  --mb-2: 2rem;
+  --mb-2-5: 2.5rem;
+
+  /*========== z index ==========*/
+  --z-tooltip: 10;
+  --z-fixed: 100;
 }
+
 
 @media (prefers-color-scheme: dark) {
   :root {
@@ -17,11 +54,77 @@
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: var(--body-color);
+  color: white;
+}
+
+.gradient-1{
+  background: var(--body-color)
+}
+
+.gradient-slate{
+  background: var(--container-color)
+}
+
+.max-w-1{
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.movie-sv-a {
+  width: 100%;
+  padding: 15px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  margin: 0 auto;
+  gap: 20px;
+  row-gap: 50px;
+}
+
+@layer utilities {
+  .css-invert {
+    @apply invert-[50%] brightness-200;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 3px;
+    height: 3px;
+    border-radius: 2px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: #09090a;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #5c5c7b;
+    border-radius: 50px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #7878a3;
+  }
+}
+
+@layer components {
+  .leftsidebar {
+    @apply sticky left-0 top-0 pt-4 z-20 flex h-screen w-fit flex-col justify-between overflow-auto border-r border-r-dark-4 bg-neutral-900  max-md:hidden;
+  }
+
+  .leftsidebar_link {
+    @apply relative flex justify-start hover:bg-neutral-500  rounded-lg px-4 py-2;
+  }
+
+  .bottombar {
+    @apply fixed bottom-0 z-10 w-full bg-neutral-900  p-4 md:hidden;
+  }
+
+  .bottombar_container {
+    @apply flex items-center justify-between gap-3 ;
+  }
+
+  .bottombar_link {
+    @apply relative flex flex-col items-center gap-2 rounded-lg p-2 sm:flex-1 sm:px-2 sm:py-1;
+  }
+
 }
