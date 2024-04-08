@@ -36,8 +36,8 @@ const Principal = () => {
                     <img width={600} src="https://res.cloudinary.com/dh01ngdjo/image/upload/v1704243246/RESTAURANTE/c52c9913643d725c_domicilio_226_745x744_sw87wn.webp" alt="" />
                 </motion.div>
                 <div className='flex   flex-col p-6 items-center justify-center'>
-                    <h1 className=' text-heading1-bold'>Best Seller</h1>
-                    <p className=' text-base-regular max-w-lg text-neutral-300'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur ab soluta, vitae illo sit placeat ipsum consectetur, quos ea quis et laboriosam aliquam pariatur possimus ratione praesentium exercitationem! Aliquam, natus.</p>
+                    <h1 className=' text-heading1-bold'>FESTIN NAVIDEÑO XL</h1>
+                    <p className=' text-base-regular max-w-lg text-neutral-300'>12 presas de pollo + 1 pop corn med + 1 papa frita gde + 18 deditos dulces + 1 gasesosa 1L</p>
                 </div>
             </section>
             <section >
